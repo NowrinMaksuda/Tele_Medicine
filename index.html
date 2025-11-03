@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MediHome - Your Trusted Healthcare Partner</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root { --primary-color:#007BFF; --secondary-color:#f8f9fa; }
+body { font-family: Arial,sans-serif; margin:0; padding:0; background:#fff; }
+header { background: var(--primary-color); color:white; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+header .logo { font-size:1.5em; font-weight:bold; }
+header nav ul { list-style:none; display:flex; gap:15px; margin:0; padding:0; }
+header nav ul li a { color:white; text-decoration:none; }
+header .user-dropdown img { width:40px; height:40px; border-radius:50%; cursor:pointer; }
+header .dropdown-menu { display:none; position:absolute; background:white; color:black; top:60px; right:20px; border-radius:5px; overflow:hidden; box-shadow:0 2px 5px rgba(0,0,0,0.2);}
+header .dropdown-menu a { display:block; padding:10px 15px; text-decoration:none; color:black;}
+header .dropdown-menu a:hover { background: var(--primary-color); color:white; }
+.hero { display:flex; padding:50px 20px; background: var(--secondary-color); gap:20px; flex-wrap:wrap; }
+.hero-text { flex:1; }
+.hero-text h1 { font-size:2em; margin-bottom:10px; }
+.hero-text p { margin-bottom:20px; }
+.hero-image img { width:300px; border-radius:8px; }
+.products-section, .features-section, .reviews-section, .stats-section { padding:40px 20px; }
+.products-container, .features-container, .reviews-container, .stats-container { display:flex; gap:20px; flex-wrap:wrap; }
+.product-card, .feature-card, .review-card, .stat-item { background:white; padding:15px; border-radius:8px; flex:1 1 200px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+.product-card .btn, .feature-card .btn { display:inline-block; padding:8px 15px; background: var(--primary-color); color:white; border:none; border-radius:5px; text-decoration:none; cursor:pointer; }
+footer { background: var(--primary-color); color:white; padding:20px; }
+footer .footer-container { display:flex; flex-wrap:wrap; gap:20px; }
+footer .footer-column { flex:1 1 150px; }
+footer a { color:white; text-decoration:none; }
+.modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center; }
+.modal-content { background:white; padding:20px; border-radius:8px; width:300px; position:relative; }
+.modal-close { position:absolute; top:10px; right:15px; cursor:pointer; font-size:1.2em; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="logo">MediHome</div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Medicine</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="user-dropdown">
+        <img src="https://picsum.photos/40" alt="User" id="userProfile">
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#">Login</a>
+            <a href="#">Signup</a>
+        </div>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-text">
+        <h1>Your Trusted Healthcare Partner</h1>
+        <p>Find all your medical needs at one place. Quality medicines and fast delivery.</p>
+        <a href="#" class="btn">Shop Now</a>
+    </div>
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1584362917165-526a968579e8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Medicine">
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-section">
+    <div class="stats-container">
+        <div class="stat-item"><div class="stat-number">1200+</div><div class="stat-label">Happy Customers</div></div>
+        <div class="stat-item"><div class="stat-number">350+</div><div class="stat-label">Products Available</div></div>
+        <div class="stat-item"><div class="stat-number">5000+</div><div class="stat-label">Total Orders</div></div>
+        <div class="stat-item"><div class="stat-number">800+</div><div class="stat-label">Prescriptions Uploaded</div></div>
+    </div>
+</section>
+
+<!-- Products Section -->
+<section class="products-section">
+    <h2>Top Products</h2>
+    <div class="products-container">
+        <div class="product-card">
+            <h3>Paracetamol</h3><p>৳50</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+            <h3>Vitamin C</h3><p>৳120</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
+        <div class="product-card">
+            <h3>Antibiotics</h3><p>৳200</p>
+            <a href="#" class="btn">Add to Cart</a>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="features-section">
+    <h2>Why Choose Us</h2>
+    <div class="features-container">
+        <div class="feature-card"><i class="fas fa-truck"></i><h3>Fast Delivery</h3></div>
+        <div class="feature-card"><i class="fas fa-shield-alt"></i><h3>100% Genuine</h3></div>
+        <div class="feature-card"><i class="fas fa-user-md"></i><h3>Expert Advice</h3></div>
+        <div class="feature-card"><i class="fas fa-lock"></i><h3>Secure Payment</h3></div>
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<section class="reviews-section">
+    <h2>Customer Reviews</h2>
+    <div class="reviews-container">
+        <div class="review-card"><h4>John Doe</h4><p>Excellent service!</p></div>
+        <div class="review-card"><h4>Jane Smith</h4><p>Fast delivery and genuine products.</p></div>
+        <div class="review-card"><h4>Ali Khan</h4><p>Highly recommend MediHome.</p></div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>About MediHome</h3>
+            <p>Your trusted online pharmacy in Bangladesh.</p>
+        </div>
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Services</h3>
+            <ul>
+                <li><a href="#">Medicine Delivery</a></li>
+                <li><a href="#">Consultation</a></li>
+            </ul>
+        </div>
+    </div>
+    <p style="text-align:center; margin-top:20px;">&copy; 2023 MediHome</p>
+</footer>
+
+<!-- Login Modal -->
+<div class="modal" id="loginModal">
+    <div class="modal-content">
+        <span class="modal-close" id="loginModalClose">&times;</span>
+        <h2>Login</h2>
+        <input type="email" placeholder="Email" style="width:100%; margin-bottom:10px; padding:8px;">
+        <input type="password" placeholder="Password" style="width:100%; margin-bottom:10px; padding:8px;">
+        <button class="btn" style="width:100%;">Login</button>
+    </div>
+</div>
+
+<script>
+// User Dropdown
+const userProfile = document.getElementById('userProfile');
+const dropdownMenu = document.getElementById('dropdownMenu');
+userProfile.addEventListener('click', ()=> { dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block'; });
+
+// Modal example
+const loginModal = document.getElementById('loginModal');
+const loginModalClose = document.getElementById('loginModalClose');
+userProfile.addEventListener('dblclick', ()=> { loginModal.style.display='flex'; });
+loginModalClose.addEventListener('click', ()=> { loginModal.style.display='none'; });
+</script>
+
+</body>
+</html>
