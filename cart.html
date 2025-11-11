@@ -1,54 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - MediHome</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/cart.css') }}">
-</head>
-
-<body>
-    <!-- Header -->
+<!-- Header -->
 <header>
-    <div class="container">
-        <div class="header-container">
-            <div class="logo">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="MediHome Logo" style="height: 50px; width: auto; margin-right: 15px;">
-                <span>MediHome</span>
+    <div class="container header-container">
+        <div class="logo">
+            <a href="{{ url_for('index') }}">MediHome Logo</a>
+        </div>
+        <nav class="navigation" id="navLinks">
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('medicines') }}">Medicine</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('services') }}">Services</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <!-- Theme Toggle -->
+            <div class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
             </div>
-            <nav>
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="{{ url_for('index') }}">Home</a></li>
-                    <li><a href="{{ url_for('medicines') }}">Medicine</a></li>
-                    <li><a href="{{ url_for('about') }}">About</a></li>
-                    <li><a href="{{ url_for('contact') }}">Contact</a></li>
-                    <li><a href="{{ url_for('services') }}">Services</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <div class="cart-icon">
-                    <a href="{{ url_for('cart') }}" style="color: inherit; text-decoration: none;">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="cart-count">{{ cart_items|length }}</span>
-                    </a>
-                </div>
-                <div class="theme-toggle" id="themeToggle">
-                    <i class="fas fa-moon"></i>
-                </div>
-                <div class="user-dropdown">
-                    <img src="{{ user.image or 'https://picsum.photos/seed/user123/40/40.jpg' }}" alt="User Profile"
-                        class="user-profile" id="userProfile">
-                    <div class="dropdown-menu" id="dropdownMenu">
-                        <a href="{{ url_for('dashboard') }}">Profile</a>
-                        <a href="{{ url_for('logout') }}">Logout</a>
-                    </div>
+
+            <!-- User Dropdown (optional) -->
+            <div class="user-dropdown">
+                <img src="{{ user.image or 'https://picsum.photos/seed/user123/40/40.jpg' }}" alt="User Profile"
+                     class="user-profile" id="userProfile">
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="{{ url_for('dashboard') }}">Profile</a>
+                    <a href="{{ url_for('logout') }}">Logout</a>
                 </div>
             </div>
-            <div class="mobile-menu-toggle" id="mobileMenuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle" id="mobileMenuToggle">
+            <i class="fas fa-bars"></i>
         </div>
     </div>
 </header>
+
+<!-- Include cart.js -->
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
