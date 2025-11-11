@@ -22,3 +22,6 @@ Functions of the Project:
 ○ Provide basic health advice or FAQs for common health queries.
 6. User Profile Management:
 ○ Update personal details, view purchase history, and set user preferences
+
+live link Index.html Part Nowrin In first lab :
+https://nowrinmaksuda.github.io/Tele_Medicine
