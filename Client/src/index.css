@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@plugin "daisyui";
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+  --color-primary: #136AFB;
+  --color-secondary: #EEF7FF;
+}
+
+.menu a.active{
+ background-color: #136AFB;
+ padding: 8px;
+ border-radius: 5px;
+ font-weight: 500;
+ color: aliceblue;
+
+}
