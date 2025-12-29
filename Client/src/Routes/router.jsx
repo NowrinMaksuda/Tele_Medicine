@@ -11,6 +11,8 @@ import DoctorsList from "../Pages/Doctors/DoctorsList";
 import PendingDoctors from "../Pages/Doctors/PendingDoctors";
 import DoctorDetails from "../Pages/Doctors/DoctorDetails";
 import MyAppointments from "../Pages/User/MyAppointments";
+import Medicines from "../Pages/Medicine/Medicines";
+import AddMedicine from "../Pages/Medicine/AddMedicine";
 
 
 export const router = createBrowserRouter([
@@ -22,6 +24,7 @@ export const router = createBrowserRouter([
       { path: '/about', Component: About },
       { path: '/login', Component: Login },
       { path: '/register', Component: Register },
+      { path: '/medicine', Component: Medicines },
       {
         path: '/be-a-doctor',
         element: (
@@ -54,8 +57,13 @@ export const router = createBrowserRouter([
         element: <PendingDoctors />,
       },
       {
+        path: '/dashboard/admin/addmedicine',
+        element: <AddMedicine />,
+      },
+      {
         path: '/dashboard/my-appointments', element:<MyAppointments></MyAppointments>
       },
+
     ],
   },
 ]);

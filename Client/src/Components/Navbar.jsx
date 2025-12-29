@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router';
 import useAuth from '../hooks/useAuth';
+import { toast } from 'react-toastify';
 
 const Navbar = () => {
   const{user,logOut}=useAuth()
@@ -14,6 +15,9 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to="/doctors">Doctors</NavLink>
+      </li>
+      <li>
+        <NavLink to="/medicine">Medicine</NavLink>
       </li>
       {user && (
         <>
@@ -30,7 +34,7 @@ const Navbar = () => {
 
     const handleLogut = () => {
       logOut().then(() => {
-        alert('logout');
+        toast.success('logout');
       });
     };
   return (

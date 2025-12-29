@@ -4,6 +4,7 @@ import useAuth from '../hooks/useAuth';
 import { RiPassPendingLine } from 'react-icons/ri';
 import useAxiosSecure from '../hooks/useAxiosSecure';
 import { BiNotepad } from 'react-icons/bi';
+import { GiMedicines } from 'react-icons/gi';
 
 const Dashboard = () => {
   const { user, loading } = useAuth();
@@ -119,14 +120,24 @@ const Dashboard = () => {
 
             {/* Admin-only */}
             {dbUser?.role === 'admin' && (
-              <li>
-                <Link to="/dashboard/admin/pending-doctors">
-                  <RiPassPendingLine />
-                  <span className="is-drawer-close:hidden">
-                    Pending Doctors
-                  </span>
-                </Link>
-              </li>
+              <>
+                <li>
+                  <Link to="/dashboard/admin/pending-doctors">
+                    <RiPassPendingLine />
+                    <span className="is-drawer-close:hidden">
+                      Pending Doctors
+                    </span>
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/dashboard/admin/addmedicine">
+                    <GiMedicines />
+                    <span className="is-drawer-close:hidden">
+                      Add Medicine
+                    </span>
+                  </Link>
+                </li>
+              </>
             )}
           </ul>
         </div>
